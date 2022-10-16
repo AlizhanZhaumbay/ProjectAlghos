@@ -1,8 +1,7 @@
 package alghosproject.dao;
 
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.*;
 import java.util.Properties;
 
 public class DAOLoader {
