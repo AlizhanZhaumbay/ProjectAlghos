@@ -11,19 +11,18 @@ public class UserDAO {
     private static Connection connection;
 
     public void addUser(User user) throws SQLException {
-        PreparedStatement prs = connection.prepareStatement("INSERT INTO Account VALUES (?,?,?,?,?,?,?,?)");
-        long next_id = getNextId();
+        PreparedStatement prs = connection.prepareStatement(
+                "INSERT INTO Account(login,password,name,age,email,gender,phone_number) " +
+                        "VALUES (?,?,?,?,?,?,?)");
 
-        prs.setLong(1, next_id);
-        prs.setString(2, user.getLogin());
-        prs.setString(3, user.getPassword());
-        prs.setString(4, user.getName());
-        prs.setInt(5, user.getAge());
-        prs.setString(6, user.getEmail());
-        prs.setString(7, user.getGender().toString());
-        prs.setString(8, user.getPhone_number());
+        prs.setString(1, user.getLogin());
+        prs.setString(2, user.getPassword());
+        prs.setString(3, user.getName());
+        prs.setInt(4, user.getAge());
+        prs.setString(5, user.getEmail());
+        prs.setString(6, user.getGender().toString());
+        prs.setString(7, user.getPhone_number());
 
-        user.setId(next_id);
         prs.executeUpdate();
     }
 
@@ -47,7 +46,7 @@ public class UserDAO {
 
     public static User setProperties(ResultSet resultSet) throws SQLException {
         User user = new User();
-        user.setId(resultSet.getInt("id"));
+        user.setId(resultSet.getLong("id"));
         user.setLogin(resultSet.getString("login"));
         user.setPassword(resultSet.getString("password"));
         user.setName(resultSet.getString("name"));
@@ -56,15 +55,6 @@ public class UserDAO {
         user.setGender(Gender.valueOf(resultSet.getString("gender")));
         user.setPhone_number(resultSet.getString("phone_number"));
         return user;
-    }
-
-    public long getNextId() throws SQLException {
-        Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery("SELECT MAX(id) FROM Account");
-        int id = 0;
-        while (resultSet.next())
-            id = resultSet.getInt(1);
-        return id + 1;
     }
 
     public User getUser(String login, String password) throws SQLException {
@@ -92,5 +82,12 @@ public class UserDAO {
 
     static {
         connection = DAOLoader.getConnection();
+    }
+
+    public void changePassword(String login, String password) throws SQLException{
+        PreparedStatement prs = connection.prepareStatement("UPDATE ACCOUNT SET password = ? WHERE login = ?");
+        prs.setString(1,password);
+        prs.setString(2,login);
+        prs.executeUpdate();
     }
 }
