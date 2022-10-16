@@ -124,7 +124,7 @@ public class SocialMedia {
         System.out.println();
     }
 
-    private void changePassword(User user) {
+    private void changePassword(User user) throws SQLException {
         System.out.println("Enter your previous password: ");
         String password = input.next();
         if (!user.getPassword().equals(password)) {
@@ -134,6 +134,7 @@ public class SocialMedia {
         System.out.println("Enter your new password: ");
         String new_password = input.next();
         user.setPassword(new_password);
+        userDAO.changePassword(user.getLogin(), new_password);
         System.out.println("Your password was changed successfully!");
         System.out.println();
     }

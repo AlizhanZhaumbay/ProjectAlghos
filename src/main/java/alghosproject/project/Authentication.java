@@ -47,6 +47,7 @@ public class Authentication {
 
         User user = new User(login,password,name,age,email,gender,phone_number);
         userDAO.addUser(user);
+        user.setId(UserDAO.getUserIdByLogin(login));
         SocialMedia.enter(user);
     }
 
