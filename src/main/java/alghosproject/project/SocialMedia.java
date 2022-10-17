@@ -39,8 +39,12 @@ public class SocialMedia {
             try {
                 switch (choice) {
                     case 1:
-                        for (Post post : session.getPosts(user))
-                            System.out.println(post);
+                        List<Post> posts = session.getPosts(user);
+                        if (posts == null || posts.isEmpty()) System.out.println("You don't have any posts.");
+                        else {
+                            for (Post post : session.getPosts(user))
+                                System.out.println(post);
+                        }
                         break;
                     case 2:
                         if (!Objects.isNull(subscriptionSubscriberDAO.getSubscribers(user.getId())) &&
@@ -76,22 +80,29 @@ public class SocialMedia {
                         System.out.print("Write login: ");
                         String login = input.next();
                         long respondent_id = UserDAO.getUserIdByLogin(login);
-                        System.out.println("1. Show profile");
-                        boolean subscribed = subscriptionSubscriberDAO.checkForSubscribe(user.getId(), respondent_id);
-                        if (subscribed) {
-                            System.out.println("2. Unsubscribe");
-                        } else {
-                            System.out.println("2. Subscribe");
-                        }
-                        System.out.println("3. Block this user");
-                        choice = input.nextInt();
-                        if (choice == 1) session.showInfo(userDAO.getUser(login));
-                        else if (choice == 2 && subscribed) {
-                            subscriptionSubscriberDAO.unfollow(user.getId(), respondent_id);
-                            System.out.println("You unsubscribed from user " + login);
-                        } else if (choice == 2) {
-                            subscriptionSubscriberDAO.follow(user.getId(), respondent_id);
-                            System.out.println("You subscribed for user " + login + "!");
+                        while (true) {
+                            System.out.println("1. Show profile");
+                            boolean subscribed = subscriptionSubscriberDAO.checkForSubscribe(user.getId(), respondent_id);
+                            if (subscribed) {
+                                System.out.println("2. Unsubscribe");
+                            } else {
+                                System.out.println("2. Subscribe");
+                            }
+                            System.out.println("3. Block this user");
+                            try {
+                                choice = input.nextInt();
+                            } catch (Exception e) {
+                                break;
+                            }
+                            if (choice == 1) session.showInfo(userDAO.getUser(login));
+                            else if (choice == 2 && subscribed) {
+                                subscriptionSubscriberDAO.unfollow(user.getId(), respondent_id);
+                                System.out.println("You unsubscribed from user " + login);
+                            } else if (choice == 2) {
+                                subscriptionSubscriberDAO.follow(user.getId(), respondent_id);
+                                System.out.println("You subscribed for user " + login + "!");
+                            }
+                            else break;
                         }
                         break;
                     case 5:

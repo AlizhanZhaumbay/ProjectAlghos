@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98803195-5dcd-4e4d-8bb6-974c6b387cdc" name="Changes" comment="Changed Authentication and SocialMedia">
+    <list default="true" id="98803195-5dcd-4e4d-8bb6-974c6b387cdc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/dao/DAOLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alghosproject/dao/DAOLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/dao/SubscriptionSubscriberDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alghosproject/dao/SubscriptionSubscriberDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/project/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alghosproject/project/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/project/SocialMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alghosproject/project/SocialMedia.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/alghosproject/dao/SubscriptionSubscriberDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alghosproject/dao/SubscriptionSubscriberDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/alghosproject/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alghosproject/dao/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/alghosproject/project/Authentication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alghosproject/project/Authentication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/alghosproject/project/SocialMedia.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alghosproject/project/SocialMedia.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,24 +47,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/user/Downloads/postgresql-42.5.0.jar",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "0a6a44f17f6138084129fc127b1ab0d5"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Downloads/postgresql-42.5.0.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;0a6a44f17f6138084129fc127b1ab0d5&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="alghosproject.dao" />
@@ -118,6 +119,7 @@
       <workItem from="1665241413687" duration="6128000" />
       <workItem from="1665317629662" duration="4329000" />
       <workItem from="1665924555715" duration="718000" />
+      <workItem from="1666001441749" duration="844000" />
     </task>
     <task id="LOCAL-00001" summary="Change follower_subscriber table to resident_subscriber">
       <created>1665924701978</created>
@@ -147,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665924896899</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added PostgreSQL driver to MAVEN">
+      <created>1666001651269</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1666001651269</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,6 +179,7 @@
     <MESSAGE value="Make table &quot;Account&quot; generate id by default" />
     <MESSAGE value="Mapping" />
     <MESSAGE value="Changed Authentication and SocialMedia" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed Authentication and SocialMedia" />
+    <MESSAGE value="Added PostgreSQL driver to MAVEN" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added PostgreSQL driver to MAVEN" />
   </component>
 </project>

@@ -3,9 +3,17 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.41">
     <root id="1">
       <DateStyle>dmy</DateStyle>
-      <IntrospectionStateNumber>2257</IntrospectionStateNumber>
+      <Grants>1||-9223372036854775808|c|G
+1||10|c|G
+1||10|C|G
+1||10|T|G
+13753||-9223372036854775808|c|G
+13753||10|c|G
+13753||10|C|G
+13753||10|T|G</Grants>
+      <IntrospectionStateNumber>2341</IntrospectionStateNumber>
       <ServerVersion>14.4</ServerVersion>
-      <StartupTime>1665158687</StartupTime>
+      <StartupTime>1665795874</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -800,8 +808,12 @@ false Zulu
 13388||10|C|G
 13388||-9223372036854775808|U|G
 13388||10|U|G</Grants>
-      <IntrospectionStateNumber>2257</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2341</IntrospectionStateNumber>
       <ObjectId>16805</ObjectId>
+      <Relations>sequence|table|25037|25038|1
+sequence|table|25080|25081|1
+sequence|table|25067|25068|1
+</Relations>
       <OwnerName>postgres</OwnerName>
     </database>
     <database id="3" parent="1" name="first_db">
@@ -4246,107 +4258,305 @@ false Zulu
     <schema id="267" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>2257</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2341</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>527</StateNumber>
       <OwnerName>postgres</OwnerName>
     </schema>
-    <table id="268" parent="267" name="account">
-      <ObjectId>16827</ObjectId>
-      <StateNumber>2254</StateNumber>
-      <AccessMethodId>2</AccessMethodId>
-      <OwnerName>postgres</OwnerName>
-    </table>
-    <table id="269" parent="267" name="follower_subscriber">
-      <ObjectId>16832</ObjectId>
-      <StateNumber>2256</StateNumber>
-      <AccessMethodId>2</AccessMethodId>
-      <OwnerName>postgres</OwnerName>
-    </table>
-    <check id="270" parent="268" name="account_age_check">
-      <ColNames>age</ColNames>
-      <ObjectId>16830</ObjectId>
-      <Predicate>age &gt; 8</Predicate>
-      <StateNumber>2227</StateNumber>
-    </check>
-    <column id="271" parent="268" name="id">
+    <sequence id="268" parent="267" name="account_id_seq">
       <DataType>integer|0s</DataType>
+      <ObjectId>25037</ObjectId>
+      <StateNumber>2320</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="269" parent="267" name="comment_id_seq">
+      <DataType>integer|0s</DataType>
+      <ObjectId>25080</ObjectId>
+      <StateNumber>2338</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <sequence id="270" parent="267" name="post_id_seq">
+      <DataType>integer|0s</DataType>
+      <ObjectId>25067</ObjectId>
+      <StateNumber>2336</StateNumber>
+      <OwnerName>postgres</OwnerName>
+    </sequence>
+    <table id="271" parent="267" name="account">
+      <ObjectId>25038</ObjectId>
+      <StateNumber>2328</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="272" parent="267" name="comment">
+      <ObjectId>25081</ObjectId>
+      <StateNumber>2338</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="273" parent="267" name="post">
+      <ObjectId>25068</ObjectId>
+      <StateNumber>2336</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="274" parent="267" name="resident_subscriber">
+      <ObjectId>25046</ObjectId>
+      <StateNumber>2328</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <check id="275" parent="271" name="account_age_check">
+      <ColNames>age</ColNames>
+      <ObjectId>25041</ObjectId>
+      <Predicate>age &gt; 0</Predicate>
+      <StateNumber>2320</StateNumber>
+    </check>
+    <column id="276" parent="271" name="id">
+      <DataType>integer|0s</DataType>
+      <IdentityKind>by-default</IdentityKind>
+      <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>2227</StateNumber>
+      <StateNumber>2320</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="272" parent="268" name="login">
-      <DataType>varchar(20)|0s</DataType>
-      <Position>2</Position>
-      <StateNumber>2227</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="273" parent="268" name="password">
+    <column id="277" parent="271" name="login">
       <DataType>varchar(100)|0s</DataType>
+      <Position>2</Position>
+      <StateNumber>2320</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="278" parent="271" name="password">
+      <DataType>varchar(500)|0s</DataType>
       <Position>3</Position>
-      <StateNumber>2227</StateNumber>
+      <StateNumber>2320</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="274" parent="268" name="name">
-      <DataType>varchar(20)|0s</DataType>
+    <column id="279" parent="271" name="name">
+      <DataType>varchar(100)|0s</DataType>
       <Position>4</Position>
-      <StateNumber>2227</StateNumber>
+      <StateNumber>2320</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="275" parent="268" name="age">
+    <column id="280" parent="271" name="age">
       <DataType>integer|0s</DataType>
       <Position>5</Position>
-      <StateNumber>2227</StateNumber>
+      <StateNumber>2320</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="276" parent="268" name="email">
-      <DataType>varchar(50)|0s</DataType>
+    <column id="281" parent="271" name="email">
+      <DataType>varchar|0s</DataType>
       <Position>6</Position>
-      <StateNumber>2227</StateNumber>
+      <StateNumber>2320</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="277" parent="268" name="gender">
+    <column id="282" parent="271" name="gender">
       <DataType>varchar(6)|0s</DataType>
       <Position>7</Position>
-      <StateNumber>2227</StateNumber>
+      <StateNumber>2320</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="278" parent="268" name="phone_number">
-      <DataType>varchar(11)|0s</DataType>
+    <column id="283" parent="271" name="phone_number">
+      <DataType>char(11)|0s</DataType>
       <Position>8</Position>
-      <StateNumber>2227</StateNumber>
-      <TypeId>1043</TypeId>
+      <StateNumber>2320</StateNumber>
+      <TypeId>1042</TypeId>
     </column>
-    <column id="279" parent="269" name="follower_id">
-      <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <StateNumber>2238</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <column id="280" parent="269" name="subscriber_id">
-      <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-      <StateNumber>2238</StateNumber>
-      <TypeId>23</TypeId>
-    </column>
-    <index id="281" parent="269" name="follower_subscriber_pkey">
-      <ColNames>follower_id
-subscriber_id</ColNames>
+    <index id="284" parent="271" name="account_pkey">
+      <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16835</ObjectId>
+      <ObjectId>25044</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2256</StateNumber>
+      <StateNumber>2328</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="282" parent="269" name="follower_subscriber_pkey">
+    <key id="285" parent="271" name="account_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>16836</ObjectId>
+      <ObjectId>25045</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2238</StateNumber>
-      <UnderlyingIndexId>16835</UnderlyingIndexId>
+      <StateNumber>2320</StateNumber>
+      <UnderlyingIndexId>25044</UnderlyingIndexId>
+    </key>
+    <column id="286" parent="272" name="id">
+      <DataType>integer|0s</DataType>
+      <IdentityKind>by-default</IdentityKind>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>2338</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="287" parent="272" name="message">
+      <DataType>text|0s</DataType>
+      <Position>2</Position>
+      <StateNumber>2338</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="288" parent="272" name="date">
+      <DataType>timestamp|0s</DataType>
+      <Position>3</Position>
+      <StateNumber>2338</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="289" parent="272" name="user_id">
+      <DataType>integer|0s</DataType>
+      <Position>4</Position>
+      <StateNumber>2338</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="290" parent="272" name="post_id">
+      <DataType>integer|0s</DataType>
+      <Position>5</Position>
+      <StateNumber>2338</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <foreign-key id="291" parent="272" name="comment_user_id_fkey">
+      <ColNames>user_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>25088</ObjectId>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>2338</StateNumber>
+      <RefTableId>25038</RefTableId>
+      <RefTableName>account</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <foreign-key id="292" parent="272" name="comment_post_id_fkey">
+      <ColNames>post_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>25093</ObjectId>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>2338</StateNumber>
+      <RefTableId>25068</RefTableId>
+      <RefTableName>post</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="293" parent="272" name="comment_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>25086</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>2338</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="294" parent="272" name="comment_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>25087</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>2338</StateNumber>
+      <UnderlyingIndexId>25086</UnderlyingIndexId>
+    </key>
+    <column id="295" parent="273" name="id">
+      <DataType>integer|0s</DataType>
+      <IdentityKind>by-default</IdentityKind>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>2336</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="296" parent="273" name="description">
+      <DataType>text|0s</DataType>
+      <Position>2</Position>
+      <StateNumber>2336</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="297" parent="273" name="date">
+      <DataType>timestamp|0s</DataType>
+      <Position>3</Position>
+      <StateNumber>2336</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="298" parent="273" name="user_id">
+      <DataType>integer|0s</DataType>
+      <Position>4</Position>
+      <StateNumber>2336</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <foreign-key id="299" parent="273" name="post_user_id_fkey">
+      <ColNames>user_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>25075</ObjectId>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>2336</StateNumber>
+      <RefTableId>25038</RefTableId>
+      <RefTableName>account</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="300" parent="273" name="post_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>25073</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>2336</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="301" parent="273" name="post_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>25074</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>2336</StateNumber>
+      <UnderlyingIndexId>25073</UnderlyingIndexId>
+    </key>
+    <column id="302" parent="274" name="resident_id">
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>2322</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="303" parent="274" name="subscriber_id">
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>2322</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <foreign-key id="304" parent="274" name="resident_subscriber_resident_id_fkey">
+      <ColNames>resident_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>25051</ObjectId>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>2322</StateNumber>
+      <RefTableId>25038</RefTableId>
+      <RefTableName>account</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <foreign-key id="305" parent="274" name="resident_subscriber_subscriber_id_fkey">
+      <ColNames>subscriber_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>25056</ObjectId>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>id</RefColNames>
+      <RefColPositions>1</RefColPositions>
+      <StateNumber>2322</StateNumber>
+      <RefTableId>25038</RefTableId>
+      <RefTableName>account</RefTableName>
+      <RefTableKind>table</RefTableKind>
+    </foreign-key>
+    <index id="306" parent="274" name="resident_subscriber_pkey">
+      <ColNames>resident_id
+subscriber_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>25049</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>2328</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="307" parent="274" name="resident_subscriber_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>25050</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>2322</StateNumber>
+      <UnderlyingIndexId>25049</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>
