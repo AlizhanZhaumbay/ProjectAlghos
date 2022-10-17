@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98803195-5dcd-4e4d-8bb6-974c6b387cdc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8e630067-c341-4021-b8a9-24af2704c84e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8e630067-c341-4021-b8a9-24af2704c84e.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8e630067-c341-4021-b8a9-24af2704c84e/storage_v2/_src_/database/alghos_db.7b1YAQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8e630067-c341-4021-b8a9-24af2704c84e/storage_v2/_src_/database/alghos_db.7b1YAQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/dao/SubscriptionSubscriberDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alghosproject/dao/SubscriptionSubscriberDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/project/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alghosproject/project/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/dao/PostDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alghosproject/dao/PostDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alghosproject/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/project/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alghosproject/models/Post.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/project/SocialMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alghosproject/project/SocialMedia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/alghosproject/dao/SubscriptionSubscriberDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alghosproject/dao/SubscriptionSubscriberDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/alghosproject/dao/PostDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alghosproject/dao/PostDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/alghosproject/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alghosproject/models/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/alghosproject/project/Post.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/alghosproject/project/SocialMedia.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alghosproject/project/SocialMedia.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -119,7 +123,7 @@
       <workItem from="1665241413687" duration="6128000" />
       <workItem from="1665317629662" duration="4329000" />
       <workItem from="1665924555715" duration="718000" />
-      <workItem from="1666001441749" duration="844000" />
+      <workItem from="1666001441749" duration="5391000" />
     </task>
     <task id="LOCAL-00001" summary="Change follower_subscriber table to resident_subscriber">
       <created>1665924701978</created>
@@ -156,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666001651269</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Filled Post model">
+      <created>1666002355931</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1666002355931</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,6 +191,7 @@
     <MESSAGE value="Mapping" />
     <MESSAGE value="Changed Authentication and SocialMedia" />
     <MESSAGE value="Added PostgreSQL driver to MAVEN" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added PostgreSQL driver to MAVEN" />
+    <MESSAGE value="Filled Post model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Filled Post model" />
   </component>
 </project>

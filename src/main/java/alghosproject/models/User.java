@@ -2,8 +2,8 @@ package alghosproject.models;
 
 
 import alghosproject.project.Gender;
-import alghosproject.project.Post;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -31,7 +31,7 @@ public class User {
     }
 
     public User(){
-
+        posts = new ArrayList<>();
     }
 
     public long getId() {
@@ -88,6 +88,10 @@ public class User {
 
     public void setPosts(List<Post> posts) {
         this.posts = posts;
+    }
+
+    public void addPost(Post post){
+        posts.add(post);
     }
 
     public String getLogin() {

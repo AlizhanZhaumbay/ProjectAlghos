@@ -1,18 +1,29 @@
-package alghosproject.project;
+package alghosproject.models;
 
-import java.time.LocalTime;
+import java.sql.Date;
+import java.time.LocalDate;
 
 public class Post {
     private long id;
     private String description;
-    private LocalTime date;
+    private Date date;
     private long user_id;
 
-    public Post(String description, LocalTime date, long user_id) {
+
+    public Post(long id, String description, Date date, long user_id){
+        this.id = id;
         this.description = description;
         this.date = date;
         this.user_id = user_id;
     }
+
+    public Post(String description, Date date, long user_id) {
+        this.description = description;
+        this.date = date;
+        this.user_id = user_id;
+    }
+
+    public Post(){}
 
     public long getId() {
         return id;
@@ -30,11 +41,11 @@ public class Post {
         this.description = description;
     }
 
-    public LocalTime getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(LocalTime date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
@@ -44,5 +55,10 @@ public class Post {
 
     public void setUser_id(long user_id) {
         this.user_id = user_id;
+    }
+
+    @Override
+    public String toString() {
+        return description + "\n" + "Created at: " + date.toString() + "\n";
     }
 }
