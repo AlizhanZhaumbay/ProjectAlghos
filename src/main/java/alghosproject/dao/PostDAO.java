@@ -43,7 +43,6 @@ public class PostDAO {
         return new Post(id,description,created_at,user_id);
     }
 
-
     static {
         connection = DAOLoader.getConnection();
     }

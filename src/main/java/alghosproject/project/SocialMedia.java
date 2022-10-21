@@ -149,7 +149,7 @@ public class SocialMedia {
                 int choice = input.nextInt();
                 if (choice > subscribers.size() || choice < subscribers.size()) return;
 
-                User user_to_action = subscribers.get(choice);
+                User user_to_action = subscribers.get(choice - 1);
                 actionsWithUser(user,user_to_action.getId(), user_to_action.getLogin());
             } catch (Exception e) {
             }
