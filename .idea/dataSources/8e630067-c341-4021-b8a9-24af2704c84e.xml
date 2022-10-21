@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.41">
     <root id="1">
       <DateStyle>dmy</DateStyle>
-      <IntrospectionStateNumber>2371</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2389</IntrospectionStateNumber>
       <ServerVersion>14.4</ServerVersion>
       <StartupTime>1665795874</StartupTime>
       <TimeZones>true ACDT
@@ -800,7 +800,7 @@ false Zulu
 13388||10|C|G
 13388||-9223372036854775808|U|G
 13388||10|U|G</Grants>
-      <IntrospectionStateNumber>2371</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2389</IntrospectionStateNumber>
       <ObjectId>16805</ObjectId>
       <Relations>sequence|table|25037|25038|1
 sequence|table|25080|25081|1
@@ -4250,7 +4250,7 @@ sequence|table|25067|25068|1
     <schema id="267" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>2371</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2389</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>527</StateNumber>
       <OwnerName>postgres</OwnerName>
@@ -4281,7 +4281,7 @@ sequence|table|25067|25068|1
     </table>
     <table id="272" parent="267" name="comment">
       <ObjectId>25081</ObjectId>
-      <StateNumber>2364</StateNumber>
+      <StateNumber>2388</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
@@ -4430,7 +4430,7 @@ sequence|table|25067|25068|1
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>25086</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>2364</StateNumber>
+      <StateNumber>2388</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>

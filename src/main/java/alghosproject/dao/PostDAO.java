@@ -14,10 +14,11 @@ public class PostDAO {
 
     public void addPost(Post post) throws SQLException {
         PreparedStatement ps = connection.prepareStatement
-                        ("INSERT INTO post(description,date,user_id) VALUES (?,?,?)");
+                        ("INSERT INTO post(description,date,user_id,name) VALUES (?,?,?,?)");
         ps.setString(1,post.getDescription());
         ps.setDate(2,post.getDate());
         ps.setLong(3,post.getUser_id());
+        ps.setString(4,post.getName());
 
         ps.executeUpdate();
     }
@@ -61,7 +62,6 @@ public class PostDAO {
             String message = resultSet.getString("message");
             Date created_at = resultSet.getDate("date");
             long user_id = resultSet.getLong("user_id");
-
             comments.add(new Comment(message,created_at,user_id,post_id));
         }
 
@@ -86,8 +86,9 @@ public class PostDAO {
         String description = resultSet.getString("description");
         Date created_at = resultSet.getDate("date");
         long user_id = resultSet.getLong("user_id");
+        String name = resultSet.getString("name");
 
-        return new Post(id,description,created_at,user_id);
+        return new Post(id,description,created_at,user_id,name);
     }
 
     static {

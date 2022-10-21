@@ -4,6 +4,7 @@ package alghosproject.project;
 import alghosproject.dao.PostDAO;
 import alghosproject.dao.SubscriptionSubscriberDAO;
 import alghosproject.dao.UserDAO;
+import alghosproject.models.Comment;
 import alghosproject.models.Post;
 import alghosproject.models.User;
 
@@ -50,7 +51,7 @@ public class SocialMedia {
                         session.addPostToUser(user);
                         break;
                     case 2:
-                        session.showPosts(user);
+                        session.showPosts(user, user.getId(), user.getLogin());
                         break;
                     case 3:
                         session.findAllSubscribers(user);
@@ -82,7 +83,9 @@ public class SocialMedia {
         System.out.print("Write something about yourself: ");
         input.nextLine();
         String text = input.nextLine();
-        Post post = new Post(text, Date.valueOf(LocalDate.now()), user.getId());
+        System.out.println("Give a name to this post");
+        String name = input.nextLine();
+        Post post = new Post(text, Date.valueOf(LocalDate.now()), user.getId(), name);
         postDAO.addPost(post);
         System.out.println("You added new post!");
     }
@@ -91,12 +94,36 @@ public class SocialMedia {
         return postDAO.getPostsOfUser(user.getId());
     }
 
-    private void showPosts(User user) throws SQLException {
-        List<Post> posts = session.getPosts(user);
-        if (posts.isEmpty()) System.out.println("You don't have any posts.");
+    private void showPosts(User user,long visitor_id,String login) throws SQLException {
+        List<Post> posts = postDAO.getPostsOfUser(visitor_id);
+
+        if (posts.isEmpty()) System.out.println("User doesn't have any posts.");
         else {
-            for (Post post : posts)
-                System.out.println(post);
+            for(int i = 0; i < posts.size(); i++){
+                System.out.printf("%d. %s.%n",i + 1, posts.get(i).getName());
+            }
+            System.out.println();
+
+            int choice = input.nextInt();
+            System.out.println(posts.get(choice - 1));
+            List<Comment> comments = postDAO.getComments(posts.get(choice - 1).getId());
+            if(comments != null && !comments.isEmpty()){
+                for(Comment comment : comments){
+                    User visitor = userDAO.getUser(comment.getUser_id());
+                    System.out.printf("%s: %s.%n", visitor.getLogin(),comment.getMessage());
+                }
+            }
+            else System.out.println("This post hasn't any comments.");
+            System.out.printf("%nAdd posts? Yes : No%n");
+            String answer = input.next();
+            if(answer.equalsIgnoreCase("yes")){
+                System.out.print("Your comment: ");
+                input.nextLine();
+                String comment = input.nextLine();
+                postDAO.addComment(new Comment
+                        (comment,new Date(System.currentTimeMillis()),user.getId(),posts.get(choice - 1).getId()));
+            }
+            System.out.println();
         }
     }
 
@@ -108,11 +135,11 @@ public class SocialMedia {
         actionsWithUser(user, respondent_id, login);
     }
 
-    private void actionsWithUser(User user, long respondent_id, String login) throws SQLException {
+    private void actionsWithUser(User user, long visitor_id, String visitor_login) throws SQLException {
         int choice = -1;
         while (true) {
             System.out.println("1. Show profile");
-            boolean subscribed = subscriptionSubscriberDAO.checkForSubscribe(user.getId(), respondent_id);
+            boolean subscribed = subscriptionSubscriberDAO.checkForSubscribe(user.getId(), visitor_id);
             if (subscribed) {
                 System.out.println("2. Unsubscribe");
             } else {
@@ -125,15 +152,15 @@ public class SocialMedia {
             } catch (Exception e) {
                 break;
             }
-            if (choice == 1) session.showInfo(userDAO.getUser(login));
+            if (choice == 1) session.showInfo(userDAO.getUser(visitor_login));
             else if (choice == 2 && subscribed) {
-                subscriptionSubscriberDAO.unfollow(user.getId(), respondent_id);
-                System.out.println("You unsubscribed from user " + login);
+                subscriptionSubscriberDAO.unfollow(user.getId(), visitor_id);
+                System.out.println("You unsubscribed from user " + visitor_login);
             } else if (choice == 2) {
-                subscriptionSubscriberDAO.follow(user.getId(), respondent_id);
-                System.out.println("You subscribed for user " + login + "!");
+                subscriptionSubscriberDAO.follow(user.getId(), visitor_id);
+                System.out.println("You subscribed for user " + visitor_login + "!");
             } else if (choice == 3) {
-                session.showPosts(userDAO.getUser(respondent_id));
+                session.showPosts(user,visitor_id,visitor_login);
             } else break;
         }
     }

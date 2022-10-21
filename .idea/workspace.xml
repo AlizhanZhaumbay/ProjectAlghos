@@ -9,8 +9,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/8e630067-c341-4021-b8a9-24af2704c84e/storage_v2/_src_/database/alghos_db.7b1YAQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8e630067-c341-4021-b8a9-24af2704c84e/storage_v2/_src_/database/alghos_db.7b1YAQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/dao/PostDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alghosproject/dao/PostDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/models/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alghosproject/models/Comment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/models/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alghosproject/models/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/project/SocialMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alghosproject/project/SocialMedia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/alghosproject/dao/PostDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alghosproject/dao/PostDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/alghosproject/models/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alghosproject/models/Post.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/alghosproject/project/SocialMedia.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alghosproject/project/SocialMedia.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +124,8 @@
       <workItem from="1666001441749" duration="5542000" />
       <workItem from="1666007107799" duration="152000" />
       <workItem from="1666240511778" duration="1305000" />
-      <workItem from="1666327836213" duration="1901000" />
+      <workItem from="1666327836213" duration="3833000" />
+      <workItem from="1666335503286" duration="1856000" />
     </task>
     <task id="LOCAL-00001" summary="Change follower_subscriber table to resident_subscriber">
       <created>1665924701978</created>
@@ -186,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666328382508</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add comment, Get comments of post">
+      <created>1666330059360</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1666330059360</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,6 +225,7 @@
     <MESSAGE value="Added PostDAO" />
     <MESSAGE value="Added Comment class" />
     <MESSAGE value="Added CommentDAO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added CommentDAO" />
+    <MESSAGE value="Add comment, Get comments of post" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add comment, Get comments of post" />
   </component>
 </project>
