@@ -8,6 +8,7 @@ public class Post {
     private String description;
     private Date date;
     private long user_id;
+    private String name;
 
 
     public Post(long id, String description, Date date, long user_id){
