@@ -120,6 +120,14 @@ public class SocialMedia {
     }
 
     private void actionsWithUser(User user, long visitor_id, String visitor_login) throws SQLException {
+        if(subscriptionSubscriberDAO.checkForBlocking(visitor_id,user.getId())) {
+            System.out.println("This user blocked you. Don't want to block it? YES/NO");
+            String response = input.next();
+            if(response.equalsIgnoreCase("yes")){
+                subscriptionSubscriberDAO.blockUser(user.getId(),visitor_id);
+            }
+            return;
+        }
         int choice = -1;
         while (true) {
             System.out.println("1. Show profile");
@@ -136,14 +144,7 @@ public class SocialMedia {
             } catch (Exception e) {
                 break;
             }
-            if(subscriptionSubscriberDAO.checkForBlocking(visitor_id,user.getId())) {
-                System.out.println("This user blocked you. Don't want to block it? YES/NO");
-                String response = input.next();
-                if(response.equalsIgnoreCase("yes")){
-                    subscriptionSubscriberDAO.blockUser(user.getId(),visitor_id);
-                }
-            }
-            else if (choice == 1) session.showInfo(userDAO.getUser(visitor_login));
+            if (choice == 1) session.showInfo(userDAO.getUser(visitor_login));
             else if (choice == 2 && subscribed) {
                 subscriptionSubscriberDAO.unfollow(user.getId(), visitor_id);
                 System.out.println("You unsubscribed from user " + visitor_login);

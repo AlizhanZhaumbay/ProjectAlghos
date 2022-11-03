@@ -54,9 +54,17 @@ public class SubscriptionSubscriberDAO {
 
     public void blockUser(long block_by,long blocked_to) throws SQLException {
         PreparedStatement preparedStatement =
-                connection.prepareStatement("INSERT INTO BlockUsers VALUES(?,?)");
+                connection.prepareStatement("INSERT INTO BlockUsers VALUES(?,?);");
         preparedStatement.setLong(1,block_by);
         preparedStatement.setLong(2,blocked_to);
+        preparedStatement.executeUpdate();
+
+        preparedStatement =
+                connection.prepareStatement("DELETE FROM resident_subscriber WHERE resident_id IN(?,?) AND subscriber_id IN (?,?)");
+        preparedStatement.setLong(1,block_by);
+        preparedStatement.setLong(2,blocked_to);
+        preparedStatement.setLong(3,blocked_to);
+        preparedStatement.setLong(4,block_by);
         preparedStatement.executeUpdate();
     }
 
