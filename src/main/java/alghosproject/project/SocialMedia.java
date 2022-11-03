@@ -11,7 +11,6 @@ import alghosproject.models.User;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
@@ -47,30 +46,14 @@ public class SocialMedia {
             int choice = input.nextInt();
             try {
                 switch (choice) {
-                    case 1:
-                        session.addPostToUser(user);
-                        break;
-                    case 2:
-                        session.showPosts(user, user.getId(), user.getLogin());
-                        break;
-                    case 3:
-                        session.findAllSubscribers(user);
-                        break;
-                    case 4:
-                        session.findAllSubscriptions(user);
-                        break;
-                    case 5:
-                        session.findUser(user);
-                        break;
-                    case 6:
-                        session.showInfo(user);
-                        break;
-                    case 7:
-                        session.changePassword(user);
-                        break;
-                    default:
-                        Authentication.main();
-                        break;
+                    case 1 -> session.addPostToUser(user);
+                    case 2 -> session.showPosts(user, user.getId(), user.getLogin());
+                    case 3 -> session.findAllSubscribers(user);
+                    case 4 -> session.findAllSubscriptions(user);
+                    case 5 -> session.findUser(user);
+                    case 6 -> session.showInfo(user);
+                    case 7 -> session.changePassword(user);
+                    default -> Authentication.main();
                 }
                 System.out.println();
             } catch (Exception e) {
@@ -94,34 +77,35 @@ public class SocialMedia {
         return postDAO.getPostsOfUser(user.getId());
     }
 
-    private void showPosts(User user,long visitor_id,String login) throws SQLException {
+    private void showPosts(User user, long visitor_id, String login) throws SQLException {
         List<Post> posts = postDAO.getPostsOfUser(visitor_id);
 
-        if (posts.isEmpty()) System.out.println("User doesn't have any posts.");
-        else {
-            for(int i = 0; i < posts.size(); i++){
-                System.out.printf("%d. %s.%n",i + 1, posts.get(i).getName());
+        if (posts.isEmpty()) {
+            System.out.println("User doesn't have any posts.");
+            System.out.println();
+        } else {
+            for (int i = 0; i < posts.size(); i++) {
+                System.out.printf("%d. %s.%n", i + 1, posts.get(i).getName());
             }
             System.out.println();
 
             int choice = input.nextInt();
             System.out.println(posts.get(choice - 1));
             List<Comment> comments = postDAO.getComments(posts.get(choice - 1).getId());
-            if(comments != null && !comments.isEmpty()){
-                for(Comment comment : comments){
+            if (comments != null && !comments.isEmpty()) {
+                for (Comment comment : comments) {
                     User visitor = userDAO.getUser(comment.getUser_id());
-                    System.out.printf("%s: %s.%n", visitor.getLogin(),comment.getMessage());
+                    System.out.printf("%s: %s.%n", visitor.getLogin(), comment.getMessage());
                 }
-            }
-            else System.out.println("This post hasn't any comments.");
-            System.out.printf("%nAdd posts? Yes : No%n");
+            } else System.out.println("This post hasn't any comments.");
+            System.out.printf("%nAdd comment? Yes : No%n");
             String answer = input.next();
-            if(answer.equalsIgnoreCase("yes")){
+            if (answer.equalsIgnoreCase("yes")) {
                 System.out.print("Your comment: ");
                 input.nextLine();
                 String comment = input.nextLine();
                 postDAO.addComment(new Comment
-                        (comment,new Date(System.currentTimeMillis()),user.getId(),posts.get(choice - 1).getId()));
+                        (comment, new Date(System.currentTimeMillis()), user.getId(), posts.get(choice - 1).getId()));
             }
             System.out.println();
         }
@@ -152,7 +136,14 @@ public class SocialMedia {
             } catch (Exception e) {
                 break;
             }
-            if (choice == 1) session.showInfo(userDAO.getUser(visitor_login));
+            if(subscriptionSubscriberDAO.checkForBlocking(visitor_id,user.getId())) {
+                System.out.println("This user blocked you. Don't want to block it? YES/NO");
+                String response = input.next();
+                if(response.equalsIgnoreCase("yes")){
+                    subscriptionSubscriberDAO.blockUser(user.getId(),visitor_id);
+                }
+            }
+            else if (choice == 1) session.showInfo(userDAO.getUser(visitor_login));
             else if (choice == 2 && subscribed) {
                 subscriptionSubscriberDAO.unfollow(user.getId(), visitor_id);
                 System.out.println("You unsubscribed from user " + visitor_login);
@@ -160,7 +151,10 @@ public class SocialMedia {
                 subscriptionSubscriberDAO.follow(user.getId(), visitor_id);
                 System.out.println("You subscribed for user " + visitor_login + "!");
             } else if (choice == 3) {
-                session.showPosts(user,visitor_id,visitor_login);
+                session.showPosts(user, visitor_id, visitor_login);
+            } else if (choice == 4) {
+                subscriptionSubscriberDAO.blockUser(user.getId(), visitor_id);
+                System.out.println("You blocked " + visitor_login + " :(");
             } else break;
         }
     }
@@ -174,11 +168,13 @@ public class SocialMedia {
             printAllUsers(subscribers);
             try {
                 int choice = input.nextInt();
-                if (choice > subscribers.size() || choice < subscribers.size()) return;
-
+                if (choice > subscribers.size() || choice < 1) {
+                    return;
+                }
                 User user_to_action = subscribers.get(choice - 1);
-                actionsWithUser(user,user_to_action.getId(), user_to_action.getLogin());
+                actionsWithUser(user, user_to_action.getId(), user_to_action.getLogin());
             } catch (Exception e) {
+                e.printStackTrace();
             }
         } else System.out.println("You don't have any subscribers");
     }
@@ -192,9 +188,9 @@ public class SocialMedia {
                 printAllUsers(subscriptions);
                 try {
                     int choice = input.nextInt();
-                    if (choice > subscriptions.size() || choice < subscriptions.size()) return;
+                    if (choice > subscriptions.size() || choice < 1) return;
                     User user_to_action = subscriptions.get(choice - 1);
-                    actionsWithUser(user,user_to_action.getId(), user_to_action.getLogin());
+                    actionsWithUser(user, user_to_action.getId(), user_to_action.getLogin());
                 } catch (Exception e) {
                 }
             } catch (SQLException e) {

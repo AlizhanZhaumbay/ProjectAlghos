@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98803195-5dcd-4e4d-8bb6-974c6b387cdc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8e630067-c341-4021-b8a9-24af2704c84e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8e630067-c341-4021-b8a9-24af2704c84e.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8e630067-c341-4021-b8a9-24af2704c84e/storage_v2/_src_/database/alghos_db.7b1YAQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8e630067-c341-4021-b8a9-24af2704c84e/storage_v2/_src_/database/alghos_db.7b1YAQ/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/dao/PostDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alghosproject/dao/PostDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/models/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alghosproject/models/Post.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/project/SocialMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alghosproject/project/SocialMedia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/alghosproject/dao/PostDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alghosproject/dao/PostDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/alghosproject/models/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alghosproject/models/Post.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/alghosproject/project/SocialMedia.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alghosproject/project/SocialMedia.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +46,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/IdeaProjects/ProjectAlghos&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/IdeaProjects/Task_project&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -125,7 +117,16 @@
       <workItem from="1666007107799" duration="152000" />
       <workItem from="1666240511778" duration="1305000" />
       <workItem from="1666327836213" duration="3833000" />
-      <workItem from="1666335503286" duration="1856000" />
+      <workItem from="1666335503286" duration="2115000" />
+      <workItem from="1666356195311" duration="74000" />
+      <workItem from="1666357652853" duration="439000" />
+      <workItem from="1666423255345" duration="280000" />
+      <workItem from="1666508447781" duration="3005000" />
+      <workItem from="1666778953535" duration="1675000" />
+      <workItem from="1666794490820" duration="600000" />
+      <workItem from="1667060853562" duration="82000" />
+      <workItem from="1667243644268" duration="74000" />
+      <workItem from="1667452289243" duration="1156000" />
     </task>
     <task id="LOCAL-00001" summary="Change follower_subscriber table to resident_subscriber">
       <created>1665924701978</created>
@@ -197,7 +198,21 @@
       <option name="project" value="LOCAL" />
       <updated>1666330059360</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="End of #2 assignment">
+      <created>1666337551925</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1666337551925</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added block operations to DAO">
+      <created>1667453071624</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1667453071624</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +241,8 @@
     <MESSAGE value="Added Comment class" />
     <MESSAGE value="Added CommentDAO" />
     <MESSAGE value="Add comment, Get comments of post" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add comment, Get comments of post" />
+    <MESSAGE value="End of #2 assignment" />
+    <MESSAGE value="Added block operations to DAO" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added block operations to DAO" />
   </component>
 </project>

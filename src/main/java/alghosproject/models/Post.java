@@ -1,7 +1,6 @@
 package alghosproject.models;
 
 import java.sql.Date;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,7 +81,7 @@ public class Post {
 
     public void addComment(Comment comment){
         if(comments == null) comments = new ArrayList<>();
-
+        comments.add(comment);
     }
 
     @Override

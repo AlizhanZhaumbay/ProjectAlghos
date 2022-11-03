@@ -52,13 +52,29 @@ public class SubscriptionSubscriberDAO {
         preparedStatement.executeUpdate();
     }
 
+    public void blockUser(long block_by,long blocked_to) throws SQLException {
+        PreparedStatement preparedStatement =
+                connection.prepareStatement("INSERT INTO BlockUsers VALUES(?,?)");
+        preparedStatement.setLong(1,block_by);
+        preparedStatement.setLong(2,blocked_to);
+        preparedStatement.executeUpdate();
+    }
+
     public boolean checkForSubscribe(long subscriber_id, long respondent_id) throws  SQLException{
         PreparedStatement preparedStatement =
                 connection.prepareStatement("SELECT * FROM resident_subscriber WHERE resident_id = ? AND subscriber_id = ?");
         preparedStatement.setLong(1,respondent_id);
         preparedStatement.setLong(2,subscriber_id);
-        ResultSet resultSet = preparedStatement.executeQuery();
-        return resultSet.next();
+        return preparedStatement.executeQuery().next();
+
+    }
+
+    public boolean checkForBlocking(long block_by, long blocked_to) throws SQLException {
+        PreparedStatement preparedStatement =
+                connection.prepareStatement("SELECT * FROM blockusers WHERE block_by = ? AND blocked_to = ?");
+        preparedStatement.setLong(1,block_by);
+        preparedStatement.setLong(2,blocked_to);
+        return preparedStatement.executeQuery().next();
     }
 
     static {
