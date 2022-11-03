@@ -89,4 +89,12 @@ public class SubscriptionSubscriberDAO {
         connection = DAOLoader.getConnection();
         userDAO = new UserDAO();
     }
+
+    public void unblockUser(long block_by, long blocked_to) throws SQLException {
+        PreparedStatement preparedStatement =
+                connection.prepareStatement("DELETE FROM blockusers WHERE block_by = ? AND blocked_to = ?");
+        preparedStatement.setLong(1,block_by);
+        preparedStatement.setLong(2,blocked_to);
+        preparedStatement.executeUpdate();
+    }
 }

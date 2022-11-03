@@ -85,7 +85,8 @@ public class SocialMedia {
             System.out.println();
         } else {
             for (int i = 0; i < posts.size(); i++) {
-                System.out.printf("%d. %s.%n", i + 1, posts.get(i).getName());
+                System.out.printf("%d. %s.%n%d - likes.%n", i + 1, posts.get(i).getName(),
+                        postDAO.getLikesOfPost(posts.get(i).getId()));
             }
             System.out.println();
 
@@ -98,6 +99,7 @@ public class SocialMedia {
                     System.out.printf("%s: %s.%n", visitor.getLogin(), comment.getMessage());
                 }
             } else System.out.println("This post hasn't any comments.");
+            System.out.println("\n" + "1. Like");
             System.out.printf("%nAdd comment? Yes : No%n");
             String answer = input.next();
             if (answer.equalsIgnoreCase("yes")) {
@@ -106,6 +108,9 @@ public class SocialMedia {
                 String comment = input.nextLine();
                 postDAO.addComment(new Comment
                         (comment, new Date(System.currentTimeMillis()), user.getId(), posts.get(choice - 1).getId()));
+            }
+            else if(answer.equalsIgnoreCase("1")){
+                postDAO.addLike(posts.get(choice - 1).getId());
             }
             System.out.println();
         }
@@ -138,7 +143,10 @@ public class SocialMedia {
                 System.out.println("2. Subscribe");
             }
             System.out.println("3. Show posts");
-            System.out.println("4. Block this user");
+            if(subscriptionSubscriberDAO.checkForBlocking(user.getId(),visitor_id))
+                System.out.println("4. Unblock user");
+            else System.out.println("4. Block this user");
+
             try {
                 choice = input.nextInt();
             } catch (Exception e) {
@@ -154,8 +162,15 @@ public class SocialMedia {
             } else if (choice == 3) {
                 session.showPosts(user, visitor_id, visitor_login);
             } else if (choice == 4) {
-                subscriptionSubscriberDAO.blockUser(user.getId(), visitor_id);
-                System.out.println("You blocked " + visitor_login + " :(");
+                if(!subscriptionSubscriberDAO.checkForBlocking(user.getId(),visitor_id)){
+                    subscriptionSubscriberDAO.blockUser(user.getId(), visitor_id);
+                    System.out.println("You blocked " + visitor_login + " :(");
+                }
+                else{
+                    subscriptionSubscriberDAO.unblockUser(user.getId(),visitor_id);
+                    System.out.println("You unblocked " + visitor_login + ":)");
+                }
+                System.out.println();
             } else break;
         }
     }

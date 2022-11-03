@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.41">
     <root id="1">
       <DateStyle>dmy</DateStyle>
-      <IntrospectionStateNumber>2426</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2443</IntrospectionStateNumber>
       <ServerVersion>14.4</ServerVersion>
       <StartupTime>1666603608</StartupTime>
       <TimeZones>true ACDT
@@ -800,7 +800,7 @@ false Zulu
 13388||10|C|G
 13388||-9223372036854775808|U|G
 13388||10|U|G</Grants>
-      <IntrospectionStateNumber>2426</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2443</IntrospectionStateNumber>
       <ObjectId>16805</ObjectId>
       <Relations>sequence|table|25037|25038|1
 sequence|table|25080|25081|1
@@ -4250,7 +4250,7 @@ sequence|table|25067|25068|1
     <schema id="267" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>2426</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2443</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>527</StateNumber>
       <OwnerName>postgres</OwnerName>
@@ -4281,7 +4281,7 @@ sequence|table|25067|25068|1
     </table>
     <table id="272" parent="267" name="blockusers">
       <ObjectId>25176</ObjectId>
-      <StateNumber>2425</StateNumber>
+      <StateNumber>2435</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
@@ -4293,7 +4293,7 @@ sequence|table|25067|25068|1
     </table>
     <table id="274" parent="267" name="post">
       <ObjectId>25068</ObjectId>
-      <StateNumber>2418</StateNumber>
+      <StateNumber>2442</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
@@ -4515,7 +4515,14 @@ sequence|table|25067|25068|1
       <StateNumber>2360</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <foreign-key id="305" parent="274" name="post_user_id_fkey">
+    <column id="305" parent="274" name="likes">
+      <DataType>integer|0s</DataType>
+      <DefaultExpression>0</DefaultExpression>
+      <Position>7</Position>
+      <StateNumber>2442</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <foreign-key id="306" parent="274" name="post_user_id_fkey">
       <ColNames>user_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>25075</ObjectId>
@@ -4527,7 +4534,7 @@ sequence|table|25067|25068|1
       <RefTableName>account</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="306" parent="274" name="post_pkey">
+    <index id="307" parent="274" name="post_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>25073</ObjectId>
@@ -4536,28 +4543,28 @@ sequence|table|25067|25068|1
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="307" parent="274" name="post_pkey">
+    <key id="308" parent="274" name="post_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>25074</ObjectId>
       <Primary>1</Primary>
       <StateNumber>2336</StateNumber>
       <UnderlyingIndexId>25073</UnderlyingIndexId>
     </key>
-    <column id="308" parent="275" name="resident_id">
+    <column id="309" parent="275" name="resident_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>2322</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="309" parent="275" name="subscriber_id">
+    <column id="310" parent="275" name="subscriber_id">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>2322</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <foreign-key id="310" parent="275" name="resident_subscriber_resident_id_fkey">
+    <foreign-key id="311" parent="275" name="resident_subscriber_resident_id_fkey">
       <ColNames>resident_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>25051</ObjectId>
@@ -4569,7 +4576,7 @@ sequence|table|25067|25068|1
       <RefTableName>account</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <foreign-key id="311" parent="275" name="resident_subscriber_subscriber_id_fkey">
+    <foreign-key id="312" parent="275" name="resident_subscriber_subscriber_id_fkey">
       <ColNames>subscriber_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>25056</ObjectId>
@@ -4581,7 +4588,7 @@ sequence|table|25067|25068|1
       <RefTableName>account</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
-    <index id="312" parent="275" name="resident_subscriber_pkey">
+    <index id="313" parent="275" name="resident_subscriber_pkey">
       <ColNames>resident_id
 subscriber_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
@@ -4591,7 +4598,7 @@ subscriber_id</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="313" parent="275" name="resident_subscriber_pkey">
+    <key id="314" parent="275" name="resident_subscriber_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>25050</ObjectId>
       <Primary>1</Primary>

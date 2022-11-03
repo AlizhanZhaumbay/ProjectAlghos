@@ -20,7 +20,6 @@ public class Post {
         this.date = date;
         this.user_id = user_id;
         this.name = name;
-        this.likes = likes;
     }
 
     public Post(String description, Date date, long user_id, String name) {
@@ -28,7 +27,6 @@ public class Post {
         this.date = date;
         this.user_id = user_id;
         this.name = name;
-        this.likes = likes;
     }
 
     public Post() {
@@ -97,6 +95,6 @@ public class Post {
 
     @Override
     public String toString() {
-        return description + "\n" + "Created at: " + date.toString() + "\n" + likes + " - likes";
+        return description + "\n" + "Created at: " + date.toString() + "\n";
     }
 }
