@@ -79,6 +79,24 @@ public class PostDAO {
         ps.executeUpdate();
     }
 
+    public long getLikesOfPost(long id) throws SQLException {
+        PreparedStatement preparedStatement =
+                connection.prepareStatement("SELECT likes from post where id = ?");
+        preparedStatement.setLong(1,id);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        resultSet.next();
+
+        return resultSet.getInt("likes");
+    }
+
+    public void addLike(long id) throws SQLException {
+        PreparedStatement preparedStatement =
+                connection.prepareStatement("UPDATE POST SET likes = likes + 1 WHERE id = ?");
+        preparedStatement.setLong(1,id);
+        preparedStatement.executeUpdate();
+    }
+
+
 
 
     public static Post setProperties(ResultSet resultSet) throws SQLException {

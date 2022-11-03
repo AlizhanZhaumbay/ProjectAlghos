@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98803195-5dcd-4e4d-8bb6-974c6b387cdc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/dao/SubscriptionSubscriberDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alghosproject/dao/SubscriptionSubscriberDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/project/SocialMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alghosproject/project/SocialMedia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/alghosproject/dao/SubscriptionSubscriberDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alghosproject/dao/SubscriptionSubscriberDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/alghosproject/project/SocialMedia.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alghosproject/project/SocialMedia.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/dao/PostDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alghosproject/dao/PostDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/models/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alghosproject/models/Post.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +127,7 @@
       <workItem from="1666794490820" duration="600000" />
       <workItem from="1667060853562" duration="82000" />
       <workItem from="1667243644268" duration="74000" />
-      <workItem from="1667452289243" duration="2493000" />
+      <workItem from="1667452289243" duration="2869000" />
     </task>
     <task id="LOCAL-00001" summary="Change follower_subscriber table to resident_subscriber">
       <created>1665924701978</created>
@@ -223,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667453537406</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Integrated block to SocialMedia">
+      <created>1667454848684</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1667454848684</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,6 +258,7 @@
     <MESSAGE value="Add comment, Get comments of post" />
     <MESSAGE value="End of #2 assignment" />
     <MESSAGE value="Added block operations to DAO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added block operations to DAO" />
+    <MESSAGE value="Integrated block to SocialMedia" />
+    <option name="LAST_COMMIT_MESSAGE" value="Integrated block to SocialMedia" />
   </component>
 </project>

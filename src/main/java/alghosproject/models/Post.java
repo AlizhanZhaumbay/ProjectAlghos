@@ -11,6 +11,7 @@ public class Post {
     private long user_id;
     private String name;
     private List<Comment> comments;
+    private long likes;
 
 
     public Post(long id, String description, Date date, long user_id, String name) {
@@ -19,6 +20,7 @@ public class Post {
         this.date = date;
         this.user_id = user_id;
         this.name = name;
+        this.likes = likes;
     }
 
     public Post(String description, Date date, long user_id, String name) {
@@ -26,6 +28,7 @@ public class Post {
         this.date = date;
         this.user_id = user_id;
         this.name = name;
+        this.likes = likes;
     }
 
     public Post() {
@@ -84,8 +87,16 @@ public class Post {
         comments.add(comment);
     }
 
+    public long getLikes() {
+        return likes;
+    }
+
+    public void setLikes(long likes) {
+        this.likes = likes;
+    }
+
     @Override
     public String toString() {
-        return description + "\n" + "Created at: " + date.toString() + "\n";
+        return description + "\n" + "Created at: " + date.toString() + "\n" + likes + " - likes";
     }
 }
