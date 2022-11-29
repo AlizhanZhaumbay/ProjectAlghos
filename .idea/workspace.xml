@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98803195-5dcd-4e4d-8bb6-974c6b387cdc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8e630067-c341-4021-b8a9-24af2704c84e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8e630067-c341-4021-b8a9-24af2704c84e.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8e630067-c341-4021-b8a9-24af2704c84e/storage_v2/_src_/database/alghos_db.7b1YAQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8e630067-c341-4021-b8a9-24af2704c84e/storage_v2/_src_/database/alghos_db.7b1YAQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/dao/SubscriptionSubscriberDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alghosproject/dao/SubscriptionSubscriberDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/models/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alghosproject/models/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/project/SocialMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alghosproject/project/SocialMedia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/alghosproject/dao/PostDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alghosproject/dao/PostDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/alghosproject/models/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alghosproject/models/Post.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/alghosproject/project/SocialMedia.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alghosproject/project/SocialMedia.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +22,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

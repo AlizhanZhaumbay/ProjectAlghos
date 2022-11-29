@@ -1,5 +1,6 @@
 package alghosproject.dao;
 
+import alghosproject.collections.MyArrayList;
 import alghosproject.models.User;
 
 import java.sql.*;
@@ -10,12 +11,12 @@ public class SubscriptionSubscriberDAO {
     private static Connection connection;
     private static UserDAO userDAO;
 
-    public List<User> getSubscriptions(long id) throws SQLException {
+    public MyArrayList<User> getSubscriptions(long id) throws SQLException {
         PreparedStatement preparedStatement =
                 connection.prepareStatement("SELECT * FROM resident_subscriber WHERE subscriber_id = ?");
         preparedStatement.setLong(1,id);
         ResultSet resultSet = preparedStatement.executeQuery();
-        List<User> subscriptions = new LinkedList<>();
+        MyArrayList<User> subscriptions = new MyArrayList<>();
         while (resultSet.next()){
             User user = userDAO.getUser(resultSet.getInt("resident_id"));
             subscriptions.add(user);
@@ -23,12 +24,12 @@ public class SubscriptionSubscriberDAO {
         return subscriptions;
     }
 
-    public List<User> getSubscribers(long id) throws SQLException{
+    public MyArrayList<User> getSubscribers(long id) throws SQLException{
         PreparedStatement preparedStatement =
                 connection.prepareStatement("SELECT * FROM resident_subscriber WHERE resident_id = ?");
         preparedStatement.setLong(1,id);
         ResultSet resultSet = preparedStatement.executeQuery();
-        List<User> subscribers = new LinkedList<>();
+        MyArrayList<User> subscribers = new MyArrayList<>();
         while (resultSet.next()){
             User user = userDAO.getUser(resultSet.getInt("subscriber_id"));
             subscribers.add(user);

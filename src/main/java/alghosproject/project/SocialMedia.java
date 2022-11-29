@@ -1,6 +1,7 @@
 package alghosproject.project;
 
 
+import alghosproject.collections.MyArrayList;
 import alghosproject.dao.PostDAO;
 import alghosproject.dao.SubscriptionSubscriberDAO;
 import alghosproject.dao.UserDAO;
@@ -11,7 +12,6 @@ import alghosproject.models.User;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -73,12 +73,12 @@ public class SocialMedia {
         System.out.println("You added new post!");
     }
 
-    private List<Post> getPosts(User user) throws SQLException {
+    private MyArrayList<Post> getPosts(User user) throws SQLException {
         return postDAO.getPostsOfUser(user.getId());
     }
 
     private void showPosts(User user, long visitor_id, String login) throws SQLException {
-        List<Post> posts = postDAO.getPostsOfUser(visitor_id);
+        MyArrayList<Post> posts = postDAO.getPostsOfUser(visitor_id);
 
         if (posts.isEmpty()) {
             System.out.println("User doesn't have any posts.");
@@ -92,9 +92,10 @@ public class SocialMedia {
 
             int choice = input.nextInt();
             System.out.println(posts.get(choice - 1));
-            List<Comment> comments = postDAO.getComments(posts.get(choice - 1).getId());
+            MyArrayList<Comment> comments = postDAO.getComments(posts.get(choice - 1).getId());
             if (comments != null && !comments.isEmpty()) {
-                for (Comment comment : comments) {
+                for (int i = 0; i < comments.size(); i++) {
+                    Comment comment = comments.get(i);
                     User visitor = userDAO.getUser(comment.getUser_id());
                     System.out.printf("%s: %s.%n", visitor.getLogin(), comment.getMessage());
                 }
@@ -180,7 +181,7 @@ public class SocialMedia {
                 !subscriptionSubscriberDAO.getSubscribers(user.getId()).isEmpty()) {
 
             System.out.println("Your Followers: ");
-            List<User> subscribers = subscriptionSubscriberDAO.getSubscribers(user.getId());
+            MyArrayList<User> subscribers = subscriptionSubscriberDAO.getSubscribers(user.getId());
             printAllUsers(subscribers);
             try {
                 int choice = input.nextInt();
@@ -200,7 +201,7 @@ public class SocialMedia {
                 !subscriptionSubscriberDAO.getSubscriptions(user.getId()).isEmpty()) {
             try {
                 System.out.println("Your subscriptions: ");
-                List<User> subscriptions = subscriptionSubscriberDAO.getSubscriptions(user.getId());
+                MyArrayList<User> subscriptions = subscriptionSubscriberDAO.getSubscriptions(user.getId());
                 printAllUsers(subscriptions);
                 try {
                     int choice = input.nextInt();
@@ -217,7 +218,7 @@ public class SocialMedia {
         }
     }
 
-    private void printAllUsers(List<User> users) {
+    private void printAllUsers(MyArrayList<User> users) {
         for (int i = 0; i < users.size(); i++) {
             System.out.printf("%d. %s%n", i + 1, users.get(i).getLogin());
         }

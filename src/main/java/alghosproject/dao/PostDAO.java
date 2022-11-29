@@ -1,5 +1,6 @@
 package alghosproject.dao;
 
+import alghosproject.collections.MyArrayList;
 import alghosproject.models.Comment;
 import alghosproject.models.Post;
 
@@ -34,12 +35,12 @@ public class PostDAO {
 
     }
 
-    public List<Post> getPostsOfUser(long user_id) throws SQLException {
+    public MyArrayList<Post> getPostsOfUser(long user_id) throws SQLException {
         PreparedStatement ps = connection.prepareStatement(
                 "SELECT * FROM Post WHERE user_id = ?");
         ps.setLong(1,user_id);
 
-        List<Post> posts = new LinkedList<>();
+        MyArrayList<Post> posts = new MyArrayList<>();
         ResultSet resultSet = ps.executeQuery();
         while(resultSet.next()){
             posts.add(setProperties(resultSet));
@@ -48,12 +49,12 @@ public class PostDAO {
         return posts;
     }
 
-    public List<Comment> getComments(long post_id) throws SQLException {
+    public MyArrayList<Comment> getComments(long post_id) throws SQLException {
         PreparedStatement ps = connection.prepareStatement(
                 "SELECT * FROM Comment WHERE post_id = ?");
         ps.setLong(1,post_id);
 
-        List<Comment> comments = new ArrayList<>();
+        MyArrayList<Comment> comments = new MyArrayList<>();
         ResultSet resultSet = ps.executeQuery();
 
 
