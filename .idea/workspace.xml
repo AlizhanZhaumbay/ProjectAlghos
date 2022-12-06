@@ -5,7 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98803195-5dcd-4e4d-8bb6-974c6b387cdc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8e630067-c341-4021-b8a9-24af2704c84e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8e630067-c341-4021-b8a9-24af2704c84e.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8e630067-c341-4021-b8a9-24af2704c84e/storage_v2/_src_/database/alghos_db.7b1YAQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8e630067-c341-4021-b8a9-24af2704c84e/storage_v2/_src_/database/alghos_db.7b1YAQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/collections/MyArrayList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/dao/DAOLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/dao/PostDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/dao/SubscriptionSubscriberDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/dao/UserDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/exceptions/UserNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/models/Comment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/models/Post.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/models/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/project/Auth_TYPE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/project/Authentication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/project/Follow_TYPE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/project/Gender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/alghosproject/project/SocialMedia.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/alghosproject/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alghosproject/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/alghosproject/dao/PostDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alghosproject/dao/PostDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/alghosproject/dao/SubscriptionSubscriberDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alghosproject/dao/SubscriptionSubscriberDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/alghosproject/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alghosproject/dao/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/alghosproject/models/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alghosproject/models/Post.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/alghosproject/project/Authentication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alghosproject/project/Authentication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/alghosproject/project/SocialMedia.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/alghosproject/project/SocialMedia.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +39,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
       </list>
@@ -35,7 +60,9 @@
     </option>
   </component>
   <component name="ProjectId" id="2FRUdpoHiXVoFKkvfLPLFqXrHVf" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
@@ -47,7 +74,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/IdeaProjects/Task_project&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/IdeaProjects/ProjectAlghos&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -89,9 +116,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MergeSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="alghosproject.collections.MergeSort" />
+      <module name="AlghoritmsProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="alghosproject.collections.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.MergeSort" />
         <item itemvalue="Application.Authentication" />
       </list>
     </recent_temporary>
@@ -128,6 +169,17 @@
       <workItem from="1667060853562" duration="82000" />
       <workItem from="1667243644268" duration="74000" />
       <workItem from="1667452289243" duration="4027000" />
+      <workItem from="1669714779459" duration="599000" />
+      <workItem from="1669736163975" duration="5346000" />
+      <workItem from="1669813155705" duration="5131000" />
+      <workItem from="1669864524444" duration="1177000" />
+      <workItem from="1669953017558" duration="581000" />
+      <workItem from="1669991940486" duration="100000" />
+      <workItem from="1670052388921" duration="4517000" />
+      <workItem from="1670074726642" duration="7205000" />
+      <workItem from="1670166129530" duration="3640000" />
+      <workItem from="1670234511311" duration="14526000" />
+      <workItem from="1670317712887" duration="885000" />
     </task>
     <task id="LOCAL-00001" summary="Change follower_subscriber table to resident_subscriber">
       <created>1665924701978</created>
@@ -234,7 +286,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667455253935</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Implemented MyArrayList then replace all lists">
+      <created>1669715123959</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1669715123960</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,6 +326,7 @@
     <MESSAGE value="Added block operations to DAO" />
     <MESSAGE value="Integrated block to SocialMedia" />
     <MESSAGE value="Added likes function to Post" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added likes function to Post" />
+    <MESSAGE value="Implemented MyArrayList then replace all lists" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented MyArrayList then replace all lists" />
   </component>
 </project>
